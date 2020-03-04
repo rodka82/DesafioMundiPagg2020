@@ -11,9 +11,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.IoC", "Infra.IoC", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{238D6082-A279-4F1E-8D9D-88FEC12F6D5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiPagg.Domain.Core", "MundiPagg.Domain.Core\MundiPagg.Domain.Core.csproj", "{2F8475EA-0487-4E4F-BA46-E01CD7EB404B}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F8475EA-0487-4E4F-BA46-E01CD7EB404B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8475EA-0487-4E4F-BA46-E01CD7EB404B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8475EA-0487-4E4F-BA46-E01CD7EB404B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8475EA-0487-4E4F-BA46-E01CD7EB404B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2F8475EA-0487-4E4F-BA46-E01CD7EB404B} = {CEFDFE50-6A03-409C-BA26-2F0F481349F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C7284C59-0377-411A-B0EC-CE775CFE62A7}
