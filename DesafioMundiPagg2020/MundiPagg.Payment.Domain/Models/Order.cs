@@ -6,6 +6,7 @@ namespace MundiPagg.Payment.Domain.Models
 {
     public class Order
     {
+        public int Id { get; set; }
         public List<Item> Itens { get; set; }
         public Customer Customer { get; set; }
         public string Ip { get; set; }
