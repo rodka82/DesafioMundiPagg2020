@@ -34,11 +34,11 @@ namespace MundiPagg.Payment.Data.Context
             }
         }
 
-        public IMongoCollection<OrderRequest> Orders
+        public IMongoCollection<OrderRequest> OrderRequests
         {
             get
             {
-                return _database.GetCollection<OrderRequest>("Orders");
+                return _database.GetCollection<OrderRequest>("OrderRequests");
             }
         }
     }
