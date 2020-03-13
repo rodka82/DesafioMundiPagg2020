@@ -7,7 +7,7 @@ namespace MundiPagg.Payment.Domain.Interfaces
 {
     public interface IOrderRepository
     {
-        IEnumerable<Order> GetOrders();
-        IEnumerable<Order> AddOrder(Order order);
+        IEnumerable<OrderRequest> GetOrders();
+        void AddOrder(OrderRequest order);
     }
 }
