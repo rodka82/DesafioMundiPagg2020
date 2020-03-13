@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.IdGenerators;
 using MongoDB.Driver;
 using MundiPagg.Payment.Domain.Models;
 using System;
@@ -32,11 +34,11 @@ namespace MundiPagg.Payment.Data.Context
             }
         }
 
-        public IMongoCollection<Order> Notas
+        public IMongoCollection<OrderRequest> Orders
         {
             get
             {
-                return _database.GetCollection<Order>("Orders");
+                return _database.GetCollection<OrderRequest>("Orders");
             }
         }
     }
