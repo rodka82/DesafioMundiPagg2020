@@ -5,9 +5,9 @@ using System.Text;
 
 namespace MundiPagg.Payment.Domain.Interfaces
 {
-    public interface IOrderRepository
+    public interface IOrderRequestRepository
     {
-        IEnumerable<OrderRequest> GetOrders();
-        void AddOrder(OrderRequest order);
+        IEnumerable<OrderRequest> GetOrderRequests();
+        void AddOrderRequest(OrderRequest order);
     }
 }

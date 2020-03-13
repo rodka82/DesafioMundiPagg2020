@@ -7,7 +7,7 @@ using MongoDB.Driver;
 
 namespace MundiPagg.Payment.Data.Repository
 {
-    public class OrderRequestRepository : IOrderRepository
+    public class OrderRequestRepository : IOrderRequestRepository
     {
         private PaymentDbContext _context;
 
@@ -15,14 +15,14 @@ namespace MundiPagg.Payment.Data.Repository
         {
             _context = context;
         }
-        public void AddOrder(OrderRequest order)
+        public void AddOrderRequest(OrderRequest order)
         {
-            _context.Orders.InsertOne(order);
+            _context.OrderRequests.InsertOne(order);
         }
 
-        public IEnumerable<OrderRequest> GetOrders()
+        public IEnumerable<OrderRequest> GetOrderRequests()
         {
-            return _context.Orders.Find(m => true).ToList();
+            return _context.OrderRequests.Find(m => true).ToList();
         }
     }
 }
