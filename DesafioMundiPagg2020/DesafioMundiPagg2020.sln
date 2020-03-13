@@ -11,11 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.IoC", "Infra.IoC", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{238D6082-A279-4F1E-8D9D-88FEC12F6D5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiPagg.Domain.Core", "MundiPagg.Domain.Core\MundiPagg.Domain.Core.csproj", "{2F8475EA-0487-4E4F-BA46-E01CD7EB404B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MundiPagg.Domain.Core", "MundiPagg.Domain.Core\MundiPagg.Domain.Core.csproj", "{2F8475EA-0487-4E4F-BA46-E01CD7EB404B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiPagg.Infra.Bus", "MundiPagg.Infra.Bus\MundiPagg.Infra.Bus.csproj", "{7B4DE235-A7D0-4670-915B-05D238BC071C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MundiPagg.Infra.Bus", "MundiPagg.Infra.Bus\MundiPagg.Infra.Bus.csproj", "{7B4DE235-A7D0-4670-915B-05D238BC071C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiPagg.Infra.IoC", "MundiPagg.Infra.IoC\MundiPagg.Infra.IoC.csproj", "{5C4A47F6-2C0B-44AD-BB5D-1C08FBB925B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MundiPagg.Infra.IoC", "MundiPagg.Infra.IoC\MundiPagg.Infra.IoC.csproj", "{5C4A47F6-2C0B-44AD-BB5D-1C08FBB925B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{41620443-E70C-43AE-8DB3-64F67E0D62E6}"
 EndProject
@@ -27,13 +27,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{BADC39
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{64A6B0F6-55EE-4FD9-BB7E-5A5C8F1B3FFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiPagg.Payment.Api", "MundiPagg.Payment.Api\MundiPagg.Payment.Api.csproj", "{765F32B2-8231-4E51-B9B6-8108CD7CE2DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MundiPagg.Payment.Api", "MundiPagg.Payment.Api\MundiPagg.Payment.Api.csproj", "{765F32B2-8231-4E51-B9B6-8108CD7CE2DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiPagg.Payment.Application", "MundiPagg.Payment.Application\MundiPagg.Payment.Application.csproj", "{B889A1C9-3C34-4780-B3DF-FA2F8F2CEDF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MundiPagg.Payment.Application", "MundiPagg.Payment.Application\MundiPagg.Payment.Application.csproj", "{B889A1C9-3C34-4780-B3DF-FA2F8F2CEDF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiPagg.Payment.Data", "MundiPagg.Payment.Data\MundiPagg.Payment.Data.csproj", "{2C6CE57C-8B87-47FE-8D73-208A8E845F64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MundiPagg.Payment.Data", "MundiPagg.Payment.Data\MundiPagg.Payment.Data.csproj", "{2C6CE57C-8B87-47FE-8D73-208A8E845F64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiPagg.Payment.Domain", "MundiPagg.Payment.Domain\MundiPagg.Payment.Domain.csproj", "{C8F1F17B-F6DA-4BFC-98DF-B1198CEC41AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MundiPagg.Payment.Domain", "MundiPagg.Payment.Domain\MundiPagg.Payment.Domain.csproj", "{C8F1F17B-F6DA-4BFC-98DF-B1198CEC41AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{2FD27FDA-B00E-4F71-84AF-2321F81B6B96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiPagg.Payment.CrossCutting", "MundiPagg.Payment.CrossCutting\MundiPagg.Payment.CrossCutting.csproj", "{1567346D-88F7-48C8-990F-9A806AD57668}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,10 @@ Global
 		{C8F1F17B-F6DA-4BFC-98DF-B1198CEC41AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8F1F17B-F6DA-4BFC-98DF-B1198CEC41AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8F1F17B-F6DA-4BFC-98DF-B1198CEC41AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1567346D-88F7-48C8-990F-9A806AD57668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1567346D-88F7-48C8-990F-9A806AD57668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1567346D-88F7-48C8-990F-9A806AD57668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1567346D-88F7-48C8-990F-9A806AD57668}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +94,8 @@ Global
 		{B889A1C9-3C34-4780-B3DF-FA2F8F2CEDF0} = {27A584AF-F6E7-4F18-A145-0D387EDF0753}
 		{2C6CE57C-8B87-47FE-8D73-208A8E845F64} = {BE88A2AB-8E1E-45EB-B402-D892E69A0F8F}
 		{C8F1F17B-F6DA-4BFC-98DF-B1198CEC41AA} = {BADC39E1-350A-4E9C-980D-686A64513839}
+		{2FD27FDA-B00E-4F71-84AF-2321F81B6B96} = {64A6B0F6-55EE-4FD9-BB7E-5A5C8F1B3FFA}
+		{1567346D-88F7-48C8-990F-9A806AD57668} = {2FD27FDA-B00E-4F71-84AF-2321F81B6B96}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C7284C59-0377-411A-B0EC-CE775CFE62A7}
