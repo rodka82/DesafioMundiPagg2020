@@ -38,7 +38,7 @@ namespace MundiPagg.Payment.Data.Context
         {
             get
             {
-                return _database.GetCollection<OrderRequest>("OrderRequests");
+                return _database.GetCollection<OrderRequest>("Order");
             }
         }
     }

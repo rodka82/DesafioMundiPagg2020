@@ -57,6 +57,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiPagg.OrderProcessor.Do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiPagg.OrderProcessor.Data", "MundiPagg.OrderProcessor.Data\MundiPagg.OrderProcessor.Data.csproj", "{5DF3575C-DB09-4A04-B099-5544873F05A7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{5F67E6A0-CB10-4A85-B3DF-B6EC86E546E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiPagg.OrderProcessor.CrossCutting", "MundiPagg.OrderProcessor.CrossCutting\MundiPagg.OrderProcessor.CrossCutting.csproj", "{FFC5AE8E-A43A-45B0-897D-D5B819DE428C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,10 @@ Global
 		{5DF3575C-DB09-4A04-B099-5544873F05A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DF3575C-DB09-4A04-B099-5544873F05A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DF3575C-DB09-4A04-B099-5544873F05A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC5AE8E-A43A-45B0-897D-D5B819DE428C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC5AE8E-A43A-45B0-897D-D5B819DE428C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC5AE8E-A43A-45B0-897D-D5B819DE428C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC5AE8E-A43A-45B0-897D-D5B819DE428C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,6 +147,8 @@ Global
 		{C6D4C130-1B7E-497C-9236-EFFC2BB379C5} = {773E4379-F155-4758-955A-41DE3B931A8C}
 		{EB58D0B6-975E-44C8-BC27-FEF7EB350A16} = {3FAFB055-0EF3-43B7-A798-DC747764B28A}
 		{5DF3575C-DB09-4A04-B099-5544873F05A7} = {725E72FB-F488-49F8-AC01-E5CAB0F6D137}
+		{5F67E6A0-CB10-4A85-B3DF-B6EC86E546E1} = {6BAE4014-93CD-41EC-9990-FC6478B6C930}
+		{FFC5AE8E-A43A-45B0-897D-D5B819DE428C} = {5F67E6A0-CB10-4A85-B3DF-B6EC86E546E1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C7284C59-0377-411A-B0EC-CE775CFE62A7}
