@@ -2,6 +2,11 @@
 using Microsoft.Extensions.DependencyInjection;
 using MundiPagg.Domain.Core.Bus;
 using MundiPagg.Infra.Bus;
+using MundiPagg.OrderProcessor.Application.Interfaces;
+using MundiPagg.OrderProcessor.Application.Services;
+using MundiPagg.OrderProcessor.Data.Context;
+using MundiPagg.OrderProcessor.Data.Repository;
+using MundiPagg.OrderProcessor.Domain.Interfaces;
 using MundiPagg.Payment.Application.Interfaces;
 using MundiPagg.Payment.Application.Services;
 using MundiPagg.Payment.Data.Context;
@@ -27,10 +32,13 @@ namespace MundiPagg.Infra.IoC
 
             //Application Services
             services.AddTransient<IOrderRequestService, OrderRequestService>();
+            services.AddTransient<IOrderResponseService, OrderResponseService>();
 
             //Data
             services.AddTransient<IOrderRequestRepository, OrderRequestRepository>();
+            services.AddTransient<IOrderResponseRepository, OrderResponseRepository>();
             services.AddTransient<PaymentDbContext>();
+            services.AddTransient<OrderProcessorDbContext>();
         }
     }
 }
