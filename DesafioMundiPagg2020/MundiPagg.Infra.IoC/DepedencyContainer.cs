@@ -6,6 +6,8 @@ using MundiPagg.OrderProcessor.Application.Interfaces;
 using MundiPagg.OrderProcessor.Application.Services;
 using MundiPagg.OrderProcessor.Data.Context;
 using MundiPagg.OrderProcessor.Data.Repository;
+using MundiPagg.OrderProcessor.Domain.EventHandlers;
+using MundiPagg.OrderProcessor.Domain.Events;
 using MundiPagg.OrderProcessor.Domain.Interfaces;
 using MundiPagg.Payment.Application.Interfaces;
 using MundiPagg.Payment.Application.Services;
@@ -26,6 +28,9 @@ namespace MundiPagg.Infra.IoC
         {
             //Domain Bus
             services.AddTransient<IEventBus, RabbitMQBus>();
+
+            //Domain Events
+            services.AddTransient<IEventHandler<OrderRequestCreatedEvent>,OrderRequestEventHandler>();
 
             //Domain Payment Commands
             services.AddTransient<IRequestHandler<CreateOrderRequestCommand, bool>, OrderRequestCommandHandler>();
