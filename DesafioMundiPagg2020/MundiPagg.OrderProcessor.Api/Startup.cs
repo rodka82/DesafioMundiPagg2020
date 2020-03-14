@@ -13,9 +13,12 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using MundiPagg.Domain.Core.Bus;
 using MundiPagg.Infra.IoC;
 using MundiPagg.OrderProcessor.CrossCutting;
 using MundiPagg.OrderProcessor.Data.Context;
+using MundiPagg.OrderProcessor.Domain.EventHandlers;
+using MundiPagg.OrderProcessor.Domain.Events;
 
 namespace MundiPagg.OrderProcessor.Api
 {
@@ -75,6 +78,14 @@ namespace MundiPagg.OrderProcessor.Api
             });
 
             app.UseMvc();
+
+            ConfigureEventBus(app);
+        }
+
+        private void ConfigureEventBus(IApplicationBuilder app)
+        {
+            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
+            eventBus.Subscribe<OrderRequestCreatedEvent, OrderRequestEventHandler>();
         }
 
         private void ConfigureDataBase()
