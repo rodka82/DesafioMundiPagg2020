@@ -25,13 +25,6 @@ namespace MundiPagg.Payment.Api.Controllers
             return Ok(_orderRequestService.GetOrderRequests());
         }
 
-        //[HttpPost]
-        //public IActionResult Post(OrderRequest orderRequest)
-        //{
-        //    _orderRequestService.AddOrderRequest(orderRequest);
-        //    return Ok();
-        //}
-
         [HttpPost]
         public IActionResult Post([FromBody] OrderRequest orderRequest)
         {
