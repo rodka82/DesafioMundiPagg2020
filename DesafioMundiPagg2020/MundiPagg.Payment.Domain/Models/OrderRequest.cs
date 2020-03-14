@@ -9,5 +9,5 @@ namespace MundiPagg.Payment.Domain.Models
         public DateTime RequestDate { get; set; }
         public string Response { get; set; }
         public DateTime ResponseDate { get; set; }
-     }
+    }
 }

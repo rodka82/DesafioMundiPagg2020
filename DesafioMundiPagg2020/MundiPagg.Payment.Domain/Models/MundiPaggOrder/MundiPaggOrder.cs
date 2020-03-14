@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MundiPagg.Payment.Domain.Models
 {
-    public class Order
+    public class MundiPaggOrder
     {
         public string Code { get; set; }
         public List<Item> Itens { get; set; }
