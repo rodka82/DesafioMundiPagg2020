@@ -7,7 +7,6 @@ namespace MundiPagg.Payment.Application.Interfaces
 {
     public interface IOrderRequestService
     {
-        void AddOrderRequest(OrderRequest orderRequest);
         IEnumerable<OrderRequest> GetOrderRequests();
         void CreateOrder(OrderRequest orderRequest);
     }

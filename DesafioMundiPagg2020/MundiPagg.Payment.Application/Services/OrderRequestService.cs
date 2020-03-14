@@ -22,7 +22,7 @@ namespace MundiPagg.Payment.Application.Services
             _bus = bus;
         }
 
-        public void AddOrderRequest(OrderRequest orderRequest)
+        private void AddOrderRequest(OrderRequest orderRequest)
         {
             _orderRequestRepository.AddOrderRequest(orderRequest);
         }
@@ -34,6 +34,7 @@ namespace MundiPagg.Payment.Application.Services
                 orderRequest.RequestDate);
 
             _bus.SendCommand(createOrderRequestCommand);
+            AddOrderRequest(orderRequest);
         }
 
         public IEnumerable<OrderRequest> GetOrderRequests()
