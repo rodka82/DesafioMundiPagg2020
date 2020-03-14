@@ -2,14 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
+using MundiPagg.Infra.IoC;
+using MundiPagg.OrderProcessor.CrossCutting;
+using MundiPagg.OrderProcessor.Data.Context;
 
 namespace MundiPagg.OrderProcessor.Api
 {
@@ -25,11 +31,28 @@ namespace MundiPagg.OrderProcessor.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(option => option.EnableEndpointRouting = false);
+
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "OrderProcessor Microservice",
+                    Version = "v1"
+                });
+            });
+
+            services.AddMediatR(typeof(Startup));
+
+            RegisterServices(services);
+        }
+
+        private void RegisterServices(IServiceCollection services)
+        {
+            DepedencyContainer.RegisterServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -42,7 +65,25 @@ namespace MundiPagg.OrderProcessor.Api
             }
 
             app.UseHttpsRedirection();
+
+            ConfigureDataBase();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json/", "OrderProcessor Microservice v1");
+            });
+
             app.UseMvc();
+        }
+
+        private void ConfigureDataBase()
+        {
+            OrderProcessorDbContext.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
+            OrderProcessorDbContext.DatabaseName = Configuration.GetSection("MongoConnection:Database").Value;
+            OrderProcessorDbContext.IsSSL = Convert.ToBoolean(this.Configuration.GetSection("MongoConnection:IsSSL").Value);
+
+            DbPersistenceMaps.Configure();
         }
     }
 }
