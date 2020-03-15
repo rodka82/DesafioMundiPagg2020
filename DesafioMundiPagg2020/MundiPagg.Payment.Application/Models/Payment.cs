@@ -6,12 +6,13 @@ using System.Text;
 
 namespace MundiPagg.Payment.Application.Models
 {
-    [JsonConverter(typeof(JsonToPaymentConverter))]
     public class Payment
     {
-        [JsonProperty("payment_method")]
+        public Payment()
+        {
+            CreditCard = new CreditCard();
+        }
         public string PaymentMethod => "credit_card";
-        [JsonProperty("credit_card")]
         public CreditCard CreditCard { get; set; }
     }
 }

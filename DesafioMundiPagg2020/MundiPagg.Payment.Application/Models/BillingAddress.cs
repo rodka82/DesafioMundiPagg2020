@@ -6,7 +6,6 @@ using System.Text;
 
 namespace MundiPagg.Payment.Application.Models
 {
-    [JsonConverter(typeof(ApiOrderConverter))]
     public class BillingAddress : Address
     {
 
