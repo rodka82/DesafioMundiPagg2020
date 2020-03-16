@@ -27,7 +27,14 @@ namespace MundiPagg.Infra.IoC
         public static void RegisterServices(IServiceCollection services)
         {
             //Domain Bus
-            services.AddTransient<IEventBus, RabbitMQBus>();
+            services.AddSingleton<IEventBus, RabbitMQBus>(sp =>
+            {
+                var scopeFactory = sp.GetRequiredService<IServiceScopeFactory>();
+                return new RabbitMQBus(sp.GetService<IMediator>(), scopeFactory);
+            });
+
+            //Subscriptions
+            services.AddTransient<OrderRequestEventHandler>();
 
             //Domain Events
             services.AddTransient<IEventHandler<OrderRequestCreatedEvent>,OrderRequestEventHandler>();
@@ -38,6 +45,7 @@ namespace MundiPagg.Infra.IoC
             //Application Services
             services.AddTransient<IOrderRequestService, OrderRequestService>();
             services.AddTransient<IOrderResponseService, OrderResponseService>();
+            services.AddTransient<IMundiPaggService, MundiPaggService>();
 
             //Data
             services.AddTransient<IOrderRequestRepository, OrderRequestRepository>();
