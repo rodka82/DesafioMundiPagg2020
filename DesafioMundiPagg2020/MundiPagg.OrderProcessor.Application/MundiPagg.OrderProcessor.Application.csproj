@@ -9,8 +9,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MundiAPI.PCL" Version="0.16.9" />
+    <PackageReference Include="MundiPagg.NET" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MundiPagg.Domain.Core\MundiPagg.Domain.Core.csproj" />
     <ProjectReference Include="..\MundiPagg.OrderProcessor.Domain\MundiPagg.OrderProcessor.Domain.csproj" />
+    <ProjectReference Include="..\MundiPagg.Payment.Application\MundiPagg.Payment.Application.csproj" />
   </ItemGroup>
 
 </Project>

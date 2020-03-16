@@ -14,9 +14,9 @@ namespace MundiPagg.OrderProcessor.Application.Services
 
         private readonly IEventBus _bus;
 
-        public OrderResponseService(IOrderResponseRepository orderRequestRepository, IEventBus bus)
+        public OrderResponseService(IOrderResponseRepository orderResponseRepository, IEventBus bus)
         {
-            _orderResponseRepository = orderRequestRepository;
+            _orderResponseRepository = orderResponseRepository;
             _bus = bus;
         }
 
