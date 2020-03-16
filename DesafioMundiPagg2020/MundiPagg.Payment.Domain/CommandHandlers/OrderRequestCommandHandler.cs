@@ -22,7 +22,7 @@ namespace MundiPagg.Payment.Domain.CommandHandlers
         public Task<bool> Handle(CreateOrderRequestCommand request, CancellationToken cancellationToken)
         {
             //publicar no RabbitMQ
-            _bus.Publish(new OrderRequestCreatedEvent(request.Id, request.OrderRequestDateTime));
+            _bus.Publish(new OrderRequestCreatedEvent(request.Id));
 
             return Task.FromResult(true);
         }
