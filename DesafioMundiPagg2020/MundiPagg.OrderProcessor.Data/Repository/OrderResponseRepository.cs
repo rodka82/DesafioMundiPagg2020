@@ -20,7 +20,7 @@ namespace MundiPagg.OrderProcessor.Data.Repository
             _context.OrderResponses.InsertOne(order);
         }
 
-        public OrderResponse GetOrderResponseById(int id)
+        public OrderResponse GetOrderResponseById(string id)
         {
             var orderResponse = _context.OrderResponses.Find(m => m.Id == id).FirstOrDefault();
             return orderResponse;
