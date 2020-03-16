@@ -53,9 +53,9 @@ namespace MundiPagg.Tests.Payment
 
             var jsonDataDictionary = jsonFromRequest.GetKeyAndValuesToDictionary();
 
-            Assert.True(jsonDataDictionary.canBeMappedTo(_customerPropertyMappings));
-            Assert.True(jsonDataDictionary.canBeMappedTo(_itemPropertyMappings));
-            Assert.True(jsonDataDictionary.canBeMappedTo(_paymentPropertyMappings));
+            Assert.True(jsonDataDictionary.CanBeMappedTo(_customerPropertyMappings));
+            Assert.True(jsonDataDictionary.CanBeMappedTo(_itemPropertyMappings));
+            Assert.True(jsonDataDictionary.CanBeMappedTo(_paymentPropertyMappings));
 
             var mundiPaggOrder = new MundiPaggOrder();
 
