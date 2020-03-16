@@ -7,13 +7,11 @@ namespace MundiPagg.OrderProcessor.Domain.Events
 {
     public class OrderRequestCreatedEvent : Event
     {
-        public int Id { get; private set; }
-        public DateTime OrderRequestDateTime { get; private set; }
+        public string Id { get; private set; }
 
-        public OrderRequestCreatedEvent(int id, DateTime orderRequestDateTime)
+        public OrderRequestCreatedEvent(string id)
         {
             Id = id;
-            OrderRequestDateTime = orderRequestDateTime;
         }
     }
 }
