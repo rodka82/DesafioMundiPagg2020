@@ -12,7 +12,7 @@ namespace MundiPagg.Payment.Application.Extensions
             return dic.Any(k => k.Key.RemoveBrackets() == key);
         }
 
-        public static bool canBeMappedTo(this Dictionary<string, string> dic, Dictionary<string, string> map)
+        public static bool CanBeMappedTo(this Dictionary<string, string> dic, Dictionary<string, string> map)
         {
             var isPossibleGetCustomer = true;
             foreach (var item in map)
