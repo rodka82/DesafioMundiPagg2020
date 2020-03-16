@@ -12,20 +12,20 @@ namespace MundiPagg.Payment.Application.Models
     {
         public MundiPaggOrder()
         {
-            Itens = new List<Item>();
-            Customer = new Customer();
-            Payments = new List<Payment>();
+            Items = new List<CreateOrderItemRequest>();
+            Customer = new CreateCustomerRequest();
+            Payments = new List<CreatePaymentRequest>();
         }
         public string Code { get; set; }
-        public List<Item> Itens { get; set; }
-        public Customer Customer { get; set; }
+        public List<CreateOrderItemRequest> Items { get; set; }
+        public CreateCustomerRequest Customer { get; set; }
         public string Ip { get; set; }
         public Location Location { get; set; }
         public Shipping Shipping { get; set; }
         public Antifraud Antifraud { get; set; }
         public string  SessionId { get; set; }
         public Device Device { get; set; }
-        public List<Payment> Payments { get; set; }
+        public List<CreatePaymentRequest> Payments { get; set; }
 
     }
 }

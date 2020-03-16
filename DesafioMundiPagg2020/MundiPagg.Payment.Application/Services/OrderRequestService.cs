@@ -36,9 +36,10 @@ namespace MundiPagg.Payment.Application.Services
             {
                 {"pagamento.parcelas","Installments"},
                 {"pagamento.endereco_cobranca.pais","Country"},
+                {"pagamento.endereco_cobranca.cidade","City"},
                 {"pagamento.endereco_cobranca.estado","State"},
                 {"pagamento.endereco_cobranca.logradouro","Line1"},
-                {"pagamento.endereco_cobranca.cep","Zipcode"},
+                {"pagamento.endereco_cobranca.cep","ZipCode"},
                 {"pagamento.cartao.numero_cartao","Number"},
                 {"pagamento.cartao.mes_vencimento","ExpMonth"},
                 {"pagamento.cartao.ano_vencimento","ExpYear"},

@@ -1,4 +1,5 @@
-﻿using MundiPagg.Payment.Application.Models;
+﻿using MundiAPI.PCL.Models;
+using MundiPagg.Payment.Application.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,6 +17,10 @@ namespace MundiPagg.Payment.Application.Factories
         {
             var mundiPaggOrder = new MundiPaggOrder();
 
+            mundiPaggOrder.Items = new List<CreateOrderItemRequest>();
+            mundiPaggOrder.Customer = new CreateCustomerRequest();
+            mundiPaggOrder.Payments = new List<CreatePaymentRequest>();
+
             mundiPaggOrder.Code = GetOrderCode(jsonDataDictionary, orderMap);
 
             var payment = PaymentFactory.Create(jsonDataDictionary, paymentMap);
@@ -25,7 +30,7 @@ namespace MundiPagg.Payment.Application.Factories
             mundiPaggOrder.Customer = customer;
 
             var itens = ItensFactory.CreateList(jsonDataDictionary, itensMap);
-            mundiPaggOrder.Itens = itens;
+            mundiPaggOrder.Items = itens;
 
             return mundiPaggOrder;
         }

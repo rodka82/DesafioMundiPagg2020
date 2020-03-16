@@ -12,15 +12,14 @@ namespace MundiPagg.OrderProcessor.Application.Services
 {
     public sealed class MundiPaggService : IMundiPaggService
     {
-        private readonly string _basicAuthUserName = "sk_XdoMjRfrYta3MWgV";
+        private readonly string _basicAuthUserName = "sk_test_jVZ74df6VtWy72bB";
         private readonly string _basicAuthPassword = "";
 
-        public GetOrderResponse CreateMundiPaggOrder(MundiPaggOrder mundiPaggOrder)
+        public GetOrderResponse CreateMundiPaggOrder(CreateOrderRequest mundiPaggOrder)
         {
             var client = new MundiAPIClient(_basicAuthUserName, _basicAuthPassword);
-            var order = OrderRequestFactory.Create(mundiPaggOrder);
 
-            return client.Orders.CreateOrder(order);
+            return client.Orders.CreateOrder(mundiPaggOrder);
         }
     }
 }

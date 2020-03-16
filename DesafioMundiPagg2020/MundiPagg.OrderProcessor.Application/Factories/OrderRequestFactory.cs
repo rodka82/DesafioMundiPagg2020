@@ -12,7 +12,7 @@ namespace MundiPagg.OrderProcessor.Application.Factories
         public static CreateOrderRequest Create(MundiPaggOrder mundiPaggOrder)
         {
             CreateCustomerRequest customer = mundiPaggOrder.Customer;
-            List<CreateOrderItemRequest> items = mundiPaggOrder.Itens.Cast<CreateOrderItemRequest>().ToList();
+            List<CreateOrderItemRequest> items = mundiPaggOrder.Items.Cast<CreateOrderItemRequest>().ToList();
             List<CreatePaymentRequest> payments = mundiPaggOrder.Payments.Cast<CreatePaymentRequest>().ToList();
 
             var order = new CreateOrderRequest()

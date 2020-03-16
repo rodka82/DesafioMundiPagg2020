@@ -1,4 +1,5 @@
-﻿using MundiPagg.Payment.Application.Extensions;
+﻿using MundiAPI.PCL.Models;
+using MundiPagg.Payment.Application.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,9 +8,16 @@ namespace MundiPagg.Payment.Application.Factories
 {
     public static class PaymentFactory
     {
-        public static Models.Payment Create(Dictionary<string, string> keyValuesPair, Dictionary<string, string> mapping)
+        private const string PAYMENT_METHOD = "credit_card";
+
+        public static CreatePaymentRequest Create(Dictionary<string, string> keyValuesPair, Dictionary<string, string> mapping)
         {
-            var payment = new MundiPagg.Payment.Application.Models.Payment();
+            var payment = new CreatePaymentRequest();
+            payment.CreditCard = new CreateCreditCardPaymentRequest();
+            payment.CreditCard.Card = new CreateCardRequest();
+            payment.CreditCard.Card.BillingAddress = new CreateAddressRequest();
+            payment.PaymentMethod = PAYMENT_METHOD;
+
             foreach (var item in keyValuesPair)
             {
                 var key = item.Key;
@@ -22,7 +30,10 @@ namespace MundiPagg.Payment.Application.Factories
                     payment.CreditCard.Installments = Convert.ToInt32(value);
 
                 if (paymentProperty == "Country")
-                    payment.CreditCard.Card.BillingAddress.Country = value;
+                    payment.CreditCard.Card.BillingAddress.Country = value; 
+
+                if (paymentProperty == "City")
+                    payment.CreditCard.Card.BillingAddress.City = value;
 
                 if (paymentProperty == "State")
                     payment.CreditCard.Card.BillingAddress.State = value;
