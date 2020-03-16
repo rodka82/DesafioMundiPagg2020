@@ -8,6 +8,8 @@ namespace MundiPagg.OrderProcessor.Domain.Interfaces
     public interface IOrderResponseRepository
     {
         IEnumerable<OrderResponse> GetOrderResponses();
-        void AddOrderRequest(OrderResponse order);
+        OrderResponse GetOrderResponseById(int id);
+        void AddOrderResponse(OrderResponse order);
+        void UpdateOrderResponse(OrderResponse order);
     }
 }
