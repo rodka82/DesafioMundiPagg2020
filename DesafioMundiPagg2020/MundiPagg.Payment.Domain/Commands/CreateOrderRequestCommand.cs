@@ -6,7 +6,7 @@ namespace MundiPagg.Payment.Domain.Commands
 {
     public class CreateOrderRequestCommand : OrderRequestCommand
     {
-        public CreateOrderRequestCommand(int id, DateTime OrderRequestDate)
+        public CreateOrderRequestCommand(string id, DateTime OrderRequestDate)
         {
             Id = id;
             OrderRequestDateTime = OrderRequestDate;

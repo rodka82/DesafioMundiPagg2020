@@ -5,7 +5,7 @@ namespace MundiPagg.Payment.Domain.Commands
 {
     public abstract class OrderRequestCommand : Command
     {
-        public int Id { get; protected set; }
+        public string Id { get; protected set; }
         public DateTime OrderRequestDateTime { get; protected set; }
     }
 }
