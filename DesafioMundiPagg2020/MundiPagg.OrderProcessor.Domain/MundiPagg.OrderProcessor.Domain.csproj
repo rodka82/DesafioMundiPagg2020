@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MundiPagg.Domain.Core\MundiPagg.Domain.Core.csproj" />
+    <ProjectReference Include="..\MundiPagg.Payment.Application\MundiPagg.Payment.Application.csproj" />
   </ItemGroup>
 
 </Project>
