@@ -8,6 +8,6 @@ namespace MundiPagg.OrderProcessor.Domain.Interfaces
 {
     public interface IMundiPaggService
     {
-        GetOrderResponse CreateMundiPaggOrder(MundiPaggOrder mundiPaggOrder);
+        GetOrderResponse CreateMundiPaggOrder(CreateOrderRequest mundiPaggOrder);
     }
 }
