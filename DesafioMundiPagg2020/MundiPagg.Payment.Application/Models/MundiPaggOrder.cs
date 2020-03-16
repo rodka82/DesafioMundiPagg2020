@@ -4,11 +4,18 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MundiAPI.PCL.Models;
 
 namespace MundiPagg.Payment.Application.Models
 {
     public class MundiPaggOrder
     {
+        public MundiPaggOrder()
+        {
+            Itens = new List<Item>();
+            Customer = new Customer();
+            Payments = new List<Payment>();
+        }
         public string Code { get; set; }
         public List<Item> Itens { get; set; }
         public Customer Customer { get; set; }
