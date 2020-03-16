@@ -26,10 +26,10 @@ namespace MundiPagg.Payment.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] OrderRequest orderRequest)
+        public IActionResult Post(string postData)
         {
-            _orderRequestService.CreateOrder(orderRequest);
-            return Ok(orderRequest);
+            _orderRequestService.CreateOrder(postData);
+            return Ok(postData);
         }
     }
 }
